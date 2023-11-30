@@ -1,4 +1,46 @@
+// Colocar {Component} dentro do React
 import React, {Component} from "react";
+
+/*
+    Sintaxe:
+
+    class NOME-VARIAVEL extends Component{
+
+        contructor(props){
+            super(props);
+            this.state = {
+                VARIAVEIS-ALTERAVEIS-01,
+                VARIAVEIS-ALTERAVEIS-02
+            }
+
+            this.FUNCAO - this.FUNCAO.bind(this);
+            
+        }
+
+        FUNCAO(){
+            CODIGO-FUNCAO
+        }
+
+        render(){
+            return(
+                <div>
+                    {this.state.VARIAVEIS-ALTERAVEIS-01}
+                </div>
+            )
+        }
+
+    }
+
+*/
+
+
+const Botao = (props) => {
+    return(
+        <div>
+            <button onClick={props.funcao}>{props.text}</button>
+        </div>
+    )       
+}
 
 class AppClassEstados extends Component{
 
@@ -38,9 +80,9 @@ class AppClassEstados extends Component{
             <div>
                 <h2>Trabalhando com Estados do Class Component</h2>
                 <h3>
-                    <button onClick={this.diminuir}>-</button>
+                    <Botao text="-" funcao={this.diminuir} />
                     {this.state.contador}
-                    <button onClick={this.aumentar}>+</button>
+                    <Botao text="+" funcao={this.aumentar} />
                 </h3>
             </div>
         );
