@@ -1,36 +1,18 @@
 import React, {Component} from 'react';
+// Colocar as pastas com os nomes delas e o arquivo principal como index.js que o app chama automaticamente o index
+import HoraAtual from './components/HoraAtual';
+import Eventos from './components/Eventos';
+import RenderizacaoCondicional from './components/RenderizacaoCondicional';
+import Listas from './components/Listas';
 
 class App extends Component{
-
-  constructor(props){
-    super(props);
-    this.state = {
-      hora: '00:00:00'
-      // Variaveira mutáveis
-    }  
-  }
-
-  // Faz com que rode depois que carregar a variavel na página
-  componentDidMount(){
-    setInterval( () => {
-      this.setState({ hora: new Date().toLocaleTimeString() })
-    }, 1000);
-  }
-
-  // Quando atualizar o state (variavel) do componente, ele executa
-  componentDidUpdate(){
-
-  }
-
-  // Retorna true ou false normalmente se você quiser que o componente atualiza ou não
-  shouldComponentUpdate(){
-
-  }
-
   render(){
     return(
       <div>
-        <h1>As horas são: {this.state.hora}</h1>
+        <HoraAtual />
+        <Eventos nome="Visitante" />
+        <RenderizacaoCondicional />
+        <Listas />
       </div>
     )
   }
